@@ -1,0 +1,7 @@
+{
+  "name": "ProyectoApiRest5V",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
