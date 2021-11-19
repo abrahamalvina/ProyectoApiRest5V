@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>DETALLE DE DATOS: </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content *ngFor="let users of usuario">
+  <ion-grid>
+    <ion-card>
+    <h1>Datos correspondiente a: {{users.name}}</h1>
+    <h1>Nombre de usuario: {{users.username}}</h1>
+    <h1>Correo electronico: {{users.email}}</h1>
+    <h1>DIRERECCIÓN: {{users.address.street}}
+      {{users.address.suite}},
+      {{users.address.city}},
+      zipcode {{users.address.zipcode}},
+      Geo: Lat{{users.address.geo.lat}} / Lng {{users.address.geo.lng}}
+    </h1>
+    <h1>Telefono: {{users.phone}}</h1>
+    <h1>Sitio web: {{users.website}}</h1>   
+    <h1>Empresa: {{users.company.name}} - {{users.company.catchPhrase}}: {{users.company.bs}} </h1>
+    </ion-card>
+</ion-grid>
+</ion-content>
+

@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ThrowStmt } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApirestService {
-
-  private apiURL = 'https://jsonplaceholder.typicode.com/';
+  
+  private apiURL = 'https://jsonplaceholder.typicode.com';
   listado = []
   constructor(private http:HttpClient) { }
 
@@ -24,7 +25,20 @@ export class ApirestService {
       })
     })
   }
+  
+  getUsuarios():any {
+    return this.http.get(`${this.apiURL}/users`)
+  }
+
+  obtieneUsuariosId(id:string) {
+    const url = `${ this.apiURL }/users?id=${ id }`;
+    return this.http.get(url);
+  } 
+
+
+  
 }
+
 
 /* Ejercicio: Crear nueva página dpnde se despieguen 
               todos los datos del usuario que se elija en la lista.

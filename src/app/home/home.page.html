@@ -2,25 +2,29 @@
   <ion-toolbar>
     <ion-title>
       Listado Personas
-    </ion-title>
+      <ion-button>
+        <ion-button (click)='listar()' slot='end'>
+          <ion-icon slot='icon-only' name='list'></ion-icon>
+         </ion-button>
+      </ion-button>
+    </ion-title>    
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div *ngIf='listadoUsuarios.length > 0'>
+  <div> 
     <ion-list>
       <div *ngFor='let item of listadoUsuarios'>
         <ion-item>
           <ion-label>{{item.name}}</ion-label>
-          <ion-label>{{item.username}}</ion-label>
-          <ion-label>{{item.email}}</ion-label>
+          <ion-button [routerLink]="[ '/detalle',item.id]">DETALLE</ion-button>
         </ion-item>
       </div>
     </ion-list>
   </div> 
 </ion-content>
 
-<ion-footer> 
+<!-- <ion-footer> 
   <ion-toolbar>
     <ion-button>
       <ion-button (click)='listar()' slot='end'>
@@ -28,4 +32,4 @@
       </ion-button>
     </ion-button>
   </ion-toolbar>
-</ion-footer> 
+</ion-footer>  -->
